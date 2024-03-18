@@ -14,7 +14,7 @@ import org.zhongweixian.server.websocket.WebSocketServer;
 public class WebSocketManager {
     private Logger logger = LoggerFactory.getLogger(WebSocketManager.class);
 
-    @Value("${ws.server.port:7250}")
+    @Value("${ws.server.port:7300}")
     private Integer port;
 
     @Value("${ws.server.path:ws}")
@@ -26,9 +26,10 @@ public class WebSocketManager {
     private WebSocketServer webSocketServer;
 
     public void start() {
-        webSocketServer = new WebSocketServer(port, 60, path, 2, 4, webSocketHandler);
+        webSocketServer = new WebSocketServer(port, 10, path, 2, 4, webSocketHandler);
         webSocketServer.start();
         webSocketHandler.check();
+        logger.info("websocket server:{} start", port,path);
     }
 
     public void stop() {

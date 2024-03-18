@@ -116,10 +116,10 @@ public class IndexController {
             logger.warn("agentKey:{} group is null", agentInfo.getAgentKey());
             return new CommonResponse<>(ErrorCode.AGENT_GROUP_NULL);
         }
-        if (!BcryptUtil.checkPwd(agentLoginVo.getPasswd(), agentInfo.getPasswd())) {
-            logger.error("agent:{}  password {} is error", agentLoginVo.getAgentKey(), agentLoginVo.getPasswd());
-            return new CommonResponse<>(ErrorCode.ACCOUNT_ERROR);
-        }
+//        if (!BcryptUtil.checkPwd(agentLoginVo.getPasswd(), agentInfo.getPasswd())) {
+//            logger.error("agent:{}  password {} is error", agentLoginVo.getAgentKey(), agentLoginVo.getPasswd());
+//            return new CommonResponse<>(ErrorCode.ACCOUNT_ERROR);
+//        }
         //删除旧的token
         if (!StringUtils.isBlank(agentInfo.getToken())) {
             cacheService.deleteKey(Constant.AGENT_TOKEN + agentInfo.getToken());

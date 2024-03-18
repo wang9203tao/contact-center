@@ -39,7 +39,7 @@ import java.time.Instant;
 @HandlerType("WS_LOGIN")
 public class WsLoginHandler extends WsBaseHandler<WsLoginEvnet> {
 
-    @Value("${server.port}")
+    @Value("${ws.server.port:7250}")
     private Integer port;
 
 

@@ -102,8 +102,6 @@ public class WebSocketHandler implements ConnectionListener {
             ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(), threadFactory);
             executorMap.put(i, executor);
         }
-
-
     }
 
     @Override
@@ -181,6 +179,7 @@ public class WebSocketHandler implements ConnectionListener {
 
     @Override
     public void connect(Channel channel, Map<String, Object> map) throws Exception {
+
         logger.info("channel:{} connect success, params:{}", channel, JSON.toJSONString(map));
         if (!map.containsKey("token")) {
             channel.close();
@@ -240,6 +239,7 @@ public class WebSocketHandler implements ConnectionListener {
             try {
                 while (iterator.hasNext()) {
                     ChannelEntity channelEntity = iterator.next().getValue();
+                    logger.info(channelEntity.toString());
                     if (channelEntity.isAuthorization()) {
                         continue;
                     }
