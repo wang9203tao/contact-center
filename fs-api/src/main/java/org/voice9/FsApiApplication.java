@@ -28,6 +28,7 @@ import org.voice9.cc.command.GroupHandler;
 import org.voice9.cc.fs.FsListen;
 import org.voice9.cc.tcp.TcpServer;
 import org.voice9.cc.websocket.WebSocketManager;
+import org.voice9.cc.websocket.WebSocketManager2;
 
 import java.util.concurrent.TimeUnit;
 
@@ -40,7 +41,7 @@ public class FsApiApplication implements CommandLineRunner, ApplicationListener<
     private Logger logger = LoggerFactory.getLogger(FsApiApplication.class);
 
     @Autowired
-    private WebSocketManager webSocketManager;
+    private WebSocketManager2 webSocketManager;
 
     @Autowired
     private TcpServer tcpServer;

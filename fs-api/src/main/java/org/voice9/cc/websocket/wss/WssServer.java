@@ -1,4 +1,4 @@
-package org.voice9.cc.websocket;
+package org.voice9.cc.websocket.wss;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -22,7 +22,7 @@ import org.zhongweixian.listener.ConnectionListener;
 import org.zhongweixian.server.websocket.WebSocketServer;
 import org.zhongweixian.server.websocket.WebSocketServerHandler;
 
-public class WssServer {
+public class WssServer{
     private Logger logger = LoggerFactory.getLogger(WebSocketServer.class);
     private Integer port;
     private Integer heart = 60;
