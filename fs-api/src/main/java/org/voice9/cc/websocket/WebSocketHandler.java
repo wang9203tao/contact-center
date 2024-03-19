@@ -101,6 +101,7 @@ public class WebSocketHandler implements ConnectionListener {
             ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("ws-server-pool-" + i).build();
             ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(), threadFactory);
             executorMap.put(i, executor);
+            logger.info(executor.toString());
         }
     }
 
@@ -179,7 +180,6 @@ public class WebSocketHandler implements ConnectionListener {
 
     @Override
     public void connect(Channel channel, Map<String, Object> map) throws Exception {
-
         logger.info("channel:{} connect success, params:{}", channel, JSON.toJSONString(map));
         if (!map.containsKey("token")) {
             channel.close();

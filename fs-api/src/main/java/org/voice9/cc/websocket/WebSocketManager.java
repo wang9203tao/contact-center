@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import org.voice9.cc.websocket.wss.WssServer;
 import org.zhongweixian.server.websocket.WebSocketServer;
 
 /**
@@ -26,8 +25,9 @@ public class WebSocketManager {
 
     private WebSocketServer webSocketServer;
 
+
     public void start() {
-        webSocketServer = new WebSocketServer(port, 10, path, 2, 4, webSocketHandler);
+        webSocketServer = new WebSocketServer(port, 60, path, 2, 4, webSocketHandler);
         webSocketServer.start();
         webSocketHandler.check();
         logger.info("websocket server:{} start", port,path);

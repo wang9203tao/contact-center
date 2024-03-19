@@ -199,88 +199,88 @@
 		// 登录
 		connectBtn.addEventListener('click', () => {
 			try {
-				//        let data = {
-				//            agentKey: $('#agentKey').val(),
-				//            passwd: CryptoJS.SHA256($('#passwd').val()).toString(),
-				//            loginType: $('#loginType').val(),
-				//            workType: $('#workType').val()
-				//        };
-				//        $.ajax({
-				//            type: "POST",
-				//            url: baseUrl+"/fs-api/index/login",
-				//            contentType: "application/json",
-				//            dataType: "json",
-				//            data: JSON.stringify(data),
-				//            success: function (res) {
-				//                if (res.code != 0) {
-				//                    alert(res.message);
-				//                    res;
-				//                }
-				//                //let loginInfo = JSON.stringify(res.data);
-				// //
-				//                voice9.init(res.data);
-				//            }
-				//        });
-				let json = {
-					id: 1,
-					cts: 1604503580,
-					uts: 1604503580,
-					companyId: 1,
-					agentId: "1001",
-					agentKey: "1001@test",
-					agentName: "测试坐席",
-					agentCode: "1001",
-					agentType: 2,
-					passwd: null,
-					sipPhone: "188899998889",
-					record: 0,
-					groupId: 25,
-					agentOnline: null,
-					afterInterval: 5,
-					display: "",
-					ringTime: 10,
-					host: "0:0:0:0:0:0:0:1",
-					ext1: "",
-					ext2: "",
-					ext3: "",
-					state: null,
-					status: 1,
-					remoteAddress: null,
-					groupIds: [
-						25
-					],
-					sips: [
-						"870001"
-					],
-					skillAgents: null,
-					callId: null,
-					deviceId: null,
-					consultDeviceId: null,
-					loginTime: 1710748000,
-					loginType: 2,
-					workType: 1,
-					agentState: "LOGIN",
-					stateTime: 0,
-					agentPreset: null,
-					beforeState: "LOGOUT",
-					beforeTime: 0,
-					logoutTime: 0,
-					serviceTime: 0,
-					maxReadyTime: 0,
-					totalReadyTime: 0,
-					readyTimes: 0,
-					notReadyTimes: 0,
-					totalAfterTime: 0,
-					maxTalkTime: 0,
-					totalTalkTime: 0,
-					totalRingTimes: 0,
-					totalAnswerTimes: 0,
-					hiddenCustomer: 0,
-					webHook: null,
-					token: "d05397a7c8fda715d365c896f7ca307a5c742871d51a0fad329696fecb5ee70d",
-					called: "870001"
-				}
-				voice9.init(json);
+				       let data = {
+				           agentKey: $('#agentKey').val(),
+				           passwd: CryptoJS.SHA256($('#passwd').val()).toString(),
+				           loginType: $('#loginType').val(),
+				           workType: $('#workType').val()
+				       };
+				       $.ajax({
+				           type: "POST",
+				           url: baseUrl+"/fs-api/index/login",
+				           contentType: "application/json",
+				           dataType: "json",
+				           data: JSON.stringify(data),
+				           success: function (res) {
+				               if (res.code != 0) {
+				                   alert(res.message);
+				                   res;
+				               }
+				               //let loginInfo = JSON.stringify(res.data);
+				//
+				               voice9.init(res.data);
+				           }
+				       });
+				// let json = {
+				// 	id: 1,
+				// 	cts: 1604503580,
+				// 	uts: 1604503580,
+				// 	companyId: 1,
+				// 	agentId: "1001",
+				// 	agentKey: "1001@test",
+				// 	agentName: "测试坐席",
+				// 	agentCode: "1001",
+				// 	agentType: 2,
+				// 	passwd: null,
+				// 	sipPhone: "188899998889",
+				// 	record: 0,
+				// 	groupId: 25,
+				// 	agentOnline: null,
+				// 	afterInterval: 5,
+				// 	display: "",
+				// 	ringTime: 10,
+				// 	host: "0:0:0:0:0:0:0:1",
+				// 	ext1: "",
+				// 	ext2: "",
+				// 	ext3: "",
+				// 	state: null,
+				// 	status: 1,
+				// 	remoteAddress: null,
+				// 	groupIds: [
+				// 		25
+				// 	],
+				// 	sips: [
+				// 		"870001"
+				// 	],
+				// 	skillAgents: null,
+				// 	callId: null,
+				// 	deviceId: null,
+				// 	consultDeviceId: null,
+				// 	loginTime: 1710748000,
+				// 	loginType: 2,
+				// 	workType: 1,
+				// 	agentState: "LOGIN",
+				// 	stateTime: 0,
+				// 	agentPreset: null,
+				// 	beforeState: "LOGOUT",
+				// 	beforeTime: 0,
+				// 	logoutTime: 0,
+				// 	serviceTime: 0,
+				// 	maxReadyTime: 0,
+				// 	totalReadyTime: 0,
+				// 	readyTimes: 0,
+				// 	notReadyTimes: 0,
+				// 	totalAfterTime: 0,
+				// 	maxTalkTime: 0,
+				// 	totalTalkTime: 0,
+				// 	totalRingTimes: 0,
+				// 	totalAnswerTimes: 0,
+				// 	hiddenCustomer: 0,
+				// 	webHook: null,
+				// 	token: "d05397a7c8fda715d365c896f7ca307a5c742871d51a0fad329696fecb5ee70d",
+				// 	called: "870001"
+				// }
+				// voice9.init(json);
 			} catch (e) {
 				alert('登录信息格式错误,请检查是否是标准格式的json')
 			}
