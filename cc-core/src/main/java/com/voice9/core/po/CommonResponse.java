@@ -6,7 +6,7 @@ import com.voice9.core.enums.ErrorCode;
  * Created by caoliang on 2020/8/24
  */
 public class CommonResponse<T> {
-    private int code;
+    private int code = 200;
     private String message = "success";
     private T data;
 

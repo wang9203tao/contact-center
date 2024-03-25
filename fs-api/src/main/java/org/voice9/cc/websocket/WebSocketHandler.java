@@ -151,17 +151,18 @@ public class WebSocketHandler implements ConnectionListener {
         if (event == null) {
             return;
         }
+        logger.info("websocket received channel:{} message:{}", channel.id(), text);
+        handler.handleEvent(event);
 
-
-        ExecutorService executorService = executorMap.get(RandomUtil.getNum(event.getAgentKey(), threadNum));
-         executorService.execute(() -> {
-            try {
-                logger.info("websocket received channel:{} message:{}", channel.id(), text);
-                handler.handleEvent(event);
-            } catch (Throwable e) {
-                logger.error(e.getMessage(), e);
-            }
-        });
+//        ExecutorService executorService = executorMap.get(RandomUtil.getNum(event.getAgentKey(), threadNum));
+//         executorService.execute(() -> {
+//            try {
+//                logger.info("websocket received channel:{} message:{}", channel.id(), text);
+//                handler.handleEvent(event);
+//            } catch (Throwable e) {
+//                logger.error(e.getMessage(), e);
+//            }
+//        });
     }
 
     @Override
@@ -239,7 +240,6 @@ public class WebSocketHandler implements ConnectionListener {
             try {
                 while (iterator.hasNext()) {
                     ChannelEntity channelEntity = iterator.next().getValue();
-                    logger.info(channelEntity.toString());
                     if (channelEntity.isAuthorization()) {
                         continue;
                     }

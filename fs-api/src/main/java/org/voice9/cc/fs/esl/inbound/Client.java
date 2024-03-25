@@ -101,6 +101,7 @@ public class Client implements IModEslApi {
         }
         workerGroup = new NioEventLoopGroup();
 
+
         // Configure this client
         Bootstrap bootstrap = new Bootstrap().group(workerGroup).channel(NioSocketChannel.class).option(ChannelOption.SO_KEEPALIVE, true);
 
